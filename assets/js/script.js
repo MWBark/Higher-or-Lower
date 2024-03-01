@@ -26,3 +26,17 @@ for (let suit of suits) {
         deck.push(card);
     }
 }
+
+let drawPile = []
+
+/**
+ * Splice a random card out of the deck
+ * Put it as the first index of the 'drawPile' array
+ */
+function draw() {
+    let randomCard = Math.floor(Math.random() * deck.length);
+    let drawnCard = deck.splice(randomCard, 1)[0];
+    drawPile.unshift(drawnCard);
+}
+
+draw()
