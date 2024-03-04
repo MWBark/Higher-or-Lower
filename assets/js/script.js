@@ -41,8 +41,10 @@ for (let suit of suits) {
     }
 }
 
+// Initial game state
 let drawPile = []
 draw()
+displayCard();
 
 /**
  * Splice a random card out of the deck
@@ -52,4 +54,11 @@ function draw() {
     let randomCard = Math.floor(Math.random() * deck.length);
     let drawnCard = deck.splice(randomCard, 1)[0];
     drawPile.unshift(drawnCard);
+}
+
+/**
+ * Display the first card object in the 'drawPile' array
+ */
+function displayCard() {
+    cardValueElement.textContent = drawPile[0].name
 }
