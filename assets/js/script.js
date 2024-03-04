@@ -46,6 +46,9 @@ let drawPile = []
 draw()
 displayCard();
 
+let currentScore = 0;
+let highScore = 0;
+
 /**
  * Splice a random card out of the deck
  * Put it as the first index of the 'drawPile' array
@@ -61,4 +64,39 @@ function draw() {
  */
 function displayCard() {
     cardValueElement.textContent = drawPile[0].name
+}
+
+/**
+ * Check's the user's guess 
+ */
+function checkGuess(isHigher) {
+    draw();
+    let currentCard = drawPile[0]
+    let previousCard = drawPile[1]
+    let currentCardValue = currentCard.value;
+    let previousCardValue = previousCard.value;
+
+    if ((isHigher && currentCardValue > previousCardValue) || (!isHigher && currentCardValue < previousCardValue)) {
+        // Correct guess
+        currentScore++;
+        if (currentScore > highScore) {
+            highScore = currentScore;
+        }
+    } else {
+        // Incorrect guess
+        currentScore = 0;
+        let returnCards = drawPile.splice(1, drawPile.length);
+        deck.push(...returnCards);
+        drawPile.length = 1;
+    }
+    displayCard();
+    updateScores();
+}
+
+/**
+ * Udates current score and high score
+ */
+function updateScores() {
+    currentScoreElement.textContent = currentScore;
+    highScoreElement.textContent = highScore;
 }
