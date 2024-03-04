@@ -1,3 +1,17 @@
+// Wait for the DOM to finish loading 
+// Get the button elements and add event listeners to them
+document.addEventListener("DOMContentLoaded", function() {
+    let higherBtn = document.getElementById('higherBtn');
+    let lowerBtn = document.getElementById('lowerBtn');
+
+    higherBtn.addEventListener('click', () => checkGuess(true));
+    lowerBtn.addEventListener('click', () => checkGuess(false));
+})
+
+let cardValueElement = document.getElementById('cardValue');
+let currentScoreElement = document.getElementById('currentScore');
+let highScoreElement = document.getElementById('highScore');
+
 // Create card objects with 'name' and 'value'
 // Put into 'deck' array
 let suits = ["spades", "diamonds", "clubs", "hearts"];
@@ -28,6 +42,7 @@ for (let suit of suits) {
 }
 
 let drawPile = []
+draw()
 
 /**
  * Splice a random card out of the deck
@@ -38,5 +53,3 @@ function draw() {
     let drawnCard = deck.splice(randomCard, 1)[0];
     drawPile.unshift(drawnCard);
 }
-
-draw()
