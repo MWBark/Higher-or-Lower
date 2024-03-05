@@ -1,0 +1,13 @@
+#title {
+    text-align: center;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#user-input {
+    text-align: center;
+}

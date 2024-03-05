@@ -8,14 +8,22 @@
     <title>Higher or Lower</title>
 </head>
 <body>
+    <header id="title">Higher or Lower</header>
     
-    <div class="card">
-        <p id="cardValue"></p>
+    <div id="game-area">
+        <div id="cardValue"></div>
+        
+        <div>
+            <p>Current Score: <span id="currentScore">0</span></p>
+            <p>High Score: <span id="highScore">0</span></p>
+        </div>
     </div>
-    <button id="higherBtn">Higher</button>
-    <button id="lowerBtn">Lower</button>
-    <p>Current Score: <span id="currentScore">0</span></p>
-    <p>High Score: <span id="highScore">0</span></p>
+    
+    
+    <div id="user-input">
+        <button id="higherBtn">Higher</button>
+        <button id="lowerBtn">Lower</button>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>

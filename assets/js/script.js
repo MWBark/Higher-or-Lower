@@ -15,23 +15,24 @@ let highScoreElement = document.getElementById('highScore');
 // Create card objects with 'name' and 'value'
 // Put into 'deck' array
 let suits = ["spades", "diamonds", "clubs", "hearts"];
-let faces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+let faces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
 
 let deck = [];
 
 for (let suit of suits) {
     for (let face of faces) {
         let card = {
-            name: `${face} of ${suit}`
+            name: `${face} of ${suit}`,
+            pic: `<img src="assets/images/playing-cards/${face}-of-${suit}.png" alt="${face} of ${suit}">`
         };
 
-        if (face === "A") {
+        if (face === "ace") {
             card.value = 14;
-        } else if (face === "K") {
+        } else if (face === "king") {
             card.value = 13;
-        }else if (face === "Q") {
+        }else if (face === "queen") {
             card.value = 12;
-        } else if (face === "J") {
+        } else if (face === "jack") {
             card.value = 11;
         } else {
             card.value = parseInt(face);
@@ -63,7 +64,7 @@ function draw() {
  * Display the first card object in the 'drawPile' array
  */
 function displayCard() {
-    cardValueElement.textContent = drawPile[0].name
+    cardValueElement.innerHTML = drawPile[0].pic
 }
 
 /**
