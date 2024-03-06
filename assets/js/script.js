@@ -11,11 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
 let cardValueElement = document.getElementById('cardValue');
 let currentScoreElement = document.getElementById('currentScore');
 let highScoreElement = document.getElementById('highScore');
+let drawnCardsElement = document.getElementById('drawn-cards')
 
 // Create card objects with 'name' and 'value'
 // Put into 'deck' array
 let suits = ["spades", "diamonds", "clubs", "hearts"];
 let faces = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+
+let firstInitials = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+let secondInitials = ["♠", "♦", "♣", "♥"]
+
 
 let deck = [];
 
@@ -23,7 +28,8 @@ for (let suit of suits) {
     for (let face of faces) {
         let card = {
             name: `${face} of ${suit}`,
-            pic: `<img src="assets/images/playing-cards/${face}-of-${suit}.png" alt="${face} of ${suit}">`
+            pic: `<img src="assets/images/playing-cards/${face}-of-${suit}.png" alt="${face} of ${suit}">`,
+            initials: ` ${firstInitials[faces.indexOf(face)]}${secondInitials[suits.indexOf(suit)]} `
         };
 
         if (face === "ace") {
@@ -44,8 +50,9 @@ for (let suit of suits) {
 
 // Initial game state
 let drawPile = []
-draw()
+draw();
 displayCard();
+displayDrawPile();
 
 let currentScore = 0;
 let highScore = 0;
@@ -65,6 +72,16 @@ function draw() {
  */
 function displayCard() {
     cardValueElement.innerHTML = drawPile[0].pic
+}
+
+/**
+ * Displays the 'initials' of card objects in 'drawPile' in 'drawnCardsElement'
+ */
+function displayDrawPile() {
+
+    for (i = 0; i < drawPile.length; i++) {
+        drawnCardsElement.innerText += drawPile[i].initials
+    }
 }
 
 /**
@@ -91,6 +108,8 @@ function checkGuess(isHigher) {
         drawPile.length = 1;
     }
     displayCard();
+    drawnCardsElement.innerText = ""
+    displayDrawPile();
     updateScores();
 }
 
