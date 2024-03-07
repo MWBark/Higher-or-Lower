@@ -2,22 +2,43 @@ body {
     background-color: darkgreen;
 }
 
-#drawn-cards {
-    height: 360px;
-    width: 240px;
-    font-size: 30px;
+h1 {
+    text-align: center;
 }
 
-#title {
-    text-align: center;
+h1, p {
+    color: white;
+}
+
+img {
+    height: 360px;
+    width: 240px;
+}
+
+button {
+    margin: 10px 5px 20px;
+}
+
+#drawn-cards {
+    height: 340px;
+    width: 210px;
+    font-size: 26px;
+    background-color: white;
+    border-radius: 5%;
+    padding: 10px;
 }
 
 #game-area {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 }
 
-#user-input {
-    text-align: center;
+@media screen and (min-width: 768px) {
+
+    #game-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }

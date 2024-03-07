@@ -1,6 +1,7 @@
 // Wait for the DOM to finish loading 
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
+
     let higherBtn = document.getElementById('higherBtn');
     let lowerBtn = document.getElementById('lowerBtn');
 
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 let cardValueElement = document.getElementById('cardValue');
 let currentScoreElement = document.getElementById('currentScore');
 let highScoreElement = document.getElementById('highScore');
-let drawnCardsElement = document.getElementById('drawn-cards')
+let drawnCardsElement = document.getElementById('drawn-cards');
 
 // Create card objects with 'name' and 'value'
 // Put into 'deck' array
@@ -26,6 +27,7 @@ let deck = [];
 
 for (let suit of suits) {
     for (let face of faces) {
+
         let card = {
             name: `${face} of ${suit}`,
             pic: `<img src="assets/images/playing-cards/${face}-of-${suit}.png" alt="${face} of ${suit}">`,
@@ -62,6 +64,7 @@ let highScore = 0;
  * Put it as the first index of the 'drawPile' array
  */
 function draw() {
+
     let randomCard = Math.floor(Math.random() * deck.length);
     let drawnCard = deck.splice(randomCard, 1)[0];
     drawPile.unshift(drawnCard);
@@ -71,6 +74,7 @@ function draw() {
  * Display the first card object in the 'drawPile' array
  */
 function displayCard() {
+
     cardValueElement.innerHTML = drawPile[0].pic
 }
 
@@ -88,6 +92,7 @@ function displayDrawPile() {
  * Check's the user's guess 
  */
 function checkGuess(isHigher) {
+
     draw();
     let currentCard = drawPile[0]
     let previousCard = drawPile[1]
@@ -117,6 +122,7 @@ function checkGuess(isHigher) {
  * Udates current score and high score
  */
 function updateScores() {
+    
     currentScoreElement.textContent = currentScore;
     highScoreElement.textContent = highScore;
 }
