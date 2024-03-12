@@ -52,9 +52,15 @@ document.addEventListener("DOMContentLoaded", function() {
          */
         function draw() {
 
-            let randomCard = Math.floor(Math.random() * deck.length);
-            let drawnCard = deck.splice(randomCard, 1)[0];
-            drawPile.unshift(drawnCard);
+            if (deck.length === 0) {
+
+                alert("No more cards in deck! Starting a new game.");
+            } else {
+
+                let randomCard = Math.floor(Math.random() * deck.length);
+                let drawnCard = deck.splice(randomCard, 1)[0];
+                drawPile.unshift(drawnCard);
+            };
         };
 
         /**
@@ -92,18 +98,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (currentScore > highScore) {
                     highScore = currentScore;
                 };
+                if (deck.length === 0) {
+
+                    alert("WOW! You beat the game! :D");
+                    newGame();
+                };
             } else {
                 // Incorrect guess
                 currentScore = 0;
-                let returnCards = drawPile.splice(1, drawPile.length);
-                deck.push(...returnCards);
-                drawPile.length = 1;
+                newGame();
             };
             displayCard();
             drawnCardsElement.innerText = "";
             displayDrawPile();
             updateScores();
-        }
+        };
+
+        /**
+         * Returns all but first index of drawPile array back into deck array
+         */
+        function newGame() {
+
+            let returnCards = drawPile.splice(1, drawPile.length);
+            deck.push(...returnCards);
+            drawPile.length = 1;
+        };
 
         /**
          * Udates current score and high score
@@ -113,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
             currentScoreElement.textContent = currentScore;
             highScoreElement.textContent = highScore;
         };
-
     });
 });
 
