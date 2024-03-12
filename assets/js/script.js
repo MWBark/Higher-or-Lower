@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <div id="user-score">
                 <p>Current Score: <span id="currentScore">0</span></p>
-                <p>High Score: <span id="highScore">0</span></p>
+                <p>High Score: <span id="high-score">0</span></p>
             </div>
     
             <div id="user-input">
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let cardValueElement = document.getElementById('cardValue');
         let currentScoreElement = document.getElementById('currentScore');
-        let highScoreElement = document.getElementById('highScore');
+        let highScoreElement = document.getElementById('high-score');
         let drawnCardsElement = document.getElementById('drawn-cards');
 
         // Initial game state
@@ -44,7 +44,18 @@ document.addEventListener("DOMContentLoaded", function() {
         displayDrawPile();
 
         let currentScore = 0;
-        let highScore = 0;
+        let highScore = "";
+
+        if (localStorage.getItem("highScore") === "null") {
+
+            highScore = 0;
+
+        } else {
+            
+            highScore = localStorage.getItem("highScore");
+        };
+
+        updateScores();
 
         /**
          * Splice a random card out of the deck
@@ -130,7 +141,15 @@ document.addEventListener("DOMContentLoaded", function() {
         function updateScores() {
     
             currentScoreElement.textContent = currentScore;
-            highScoreElement.textContent = highScore;
+
+            if (typeof(Storage) !== "undefined") {
+
+                localStorage.setItem("highScore", highScore);
+                highScoreElement.textContent = localStorage.getItem("highScore");
+            } else {
+
+                highScoreElement.textContent = highScore;
+            }
         };
     });
 });
