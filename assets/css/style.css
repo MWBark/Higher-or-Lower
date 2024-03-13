@@ -1,22 +1,51 @@
 body {
     background-color: darkgreen;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 h1 {
     text-align: center;
+    font-size: xxx-large;
+    background-color: #191955;
+    margin: 0;
+    padding-bottom: 10px;
 }
 
 h1, p {
     color: white;
 }
 
+h2, p {
+    font-size: x-large;
+}
+
 img {
     height: 360px;
     width: 240px;
+    padding: 30px;
 }
 
 button {
     margin: 10px 5px 20px;
+}
+
+footer {
+    font-size: medium;
+    text-align: center;
+    background-color: #191955;
+    height: 40px;
+    padding-bottom: 20px;
+}
+
+footer > p {
+    font-size: large;
+}
+
+a {
+    color: #f70132;
 }
 
 #drawn-cards {
@@ -29,9 +58,18 @@ button {
 }
 
 #game-area {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#info {
+    text-align: center;
+}
+
+#drawn-cards {
+    margin: 30px;
 }
 
 @media screen and (min-width: 768px) {
