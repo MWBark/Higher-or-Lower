@@ -33,7 +33,16 @@ img {
 }
 
 button {
-    margin: 10px 5px 20px;
+    margin: 10px 20px 20px;
+    height: 50px;
+    width: 75px;
+    border-radius: 10%;
+    font-size: large;
+}
+
+button:hover {
+    background-color: #f70132;
+    color: white;
 }
 
 footer {
@@ -60,6 +69,10 @@ a {
     color: red;
 }
 
+#user-area {
+    text-align: center;
+}
+
 #drawn-cards {
     height: 340px;
     width: 210px;
@@ -67,6 +80,7 @@ a {
     background-color: white;
     border-radius: 5%;
     padding: 10px;
+    margin: 30px;
 }
 
 #game-area {
@@ -78,10 +92,6 @@ a {
 
 #info {
     text-align: center;
-}
-
-#drawn-cards {
-    margin: 30px;
 }
 
 @media screen and (min-width: 768px) {
