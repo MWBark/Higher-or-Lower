@@ -27,8 +27,8 @@ h2, p {
 }
 
 img {
-    height: 360px;
-    width: 240px;
+    height: 300px;
+    width: 200px;
     padding: 30px;
 }
 
@@ -73,6 +73,10 @@ a {
     text-align: center;
 }
 
+#user-score :first-child {
+    margin-top: 0;
+}
+
 #drawn-cards {
     height: 340px;
     width: 210px;
@@ -95,7 +99,12 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-
+    
+    img {
+        height: 360px;
+        width: 240px;
+    }
+    
     #game-area {
         display: flex;
         flex-direction: row;
