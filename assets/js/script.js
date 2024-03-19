@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div id="user-area">
 
-            <div id="user-score">
-                <p>Current Score: <span id="currentScore">0</span></p>
-                <p>High Score: <span id="high-score">0</span></p>
-            </div>
-
             <div id="user-input">
                 <button id="higherBtn">Higher</button>
                 <button id="lowerBtn">Lower</button>
+            </div>
+
+            <div id="user-score">
+                <p>Current Score: <span id="currentScore">0</span></p>
+                <p>High Score: <span id="high-score">0</span></p>
             </div>
         </div>
         
