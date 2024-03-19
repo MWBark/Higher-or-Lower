@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */ 
+
 // Wait for the DOM to finish loading 
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p>Current Score: <span id="currentScore">0</span></p>
                 <p>High Score: <span id="high-score">0</span></p>
             </div>
-    
+
             <div id="user-input">
                 <button id="higherBtn">Higher</button>
                 <button id="lowerBtn">Lower</button>
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             
             highScore = localStorage.getItem("highScore");
-        };
+        }
 
         updateScores();
 
@@ -71,16 +73,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 let randomCard = Math.floor(Math.random() * deck.length);
                 let drawnCard = deck.splice(randomCard, 1)[0];
                 drawPile.unshift(drawnCard);
-            };
-        };
+            }
+        }
 
         /**
          * Display the first card object in the 'drawPile' array
          */
         function displayCard() {
 
-            cardValueElement.innerHTML = drawPile[0].pic
-        };
+            cardValueElement.innerHTML = drawPile[0].pic;
+        }
 
         /**
          * Displays the 'initials' of card objects in 'drawPile' in 'drawnCardsElement'
@@ -88,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
         function displayDrawPile() {
 
             for (i = 0; i < drawPile.length; i++) {
-                drawnCardsElement.innerText += drawPile[i].initials
-            };
-        };
+                drawnCardsElement.innerText += drawPile[i].initials;
+            }
+        }
 
         /**
          * Check's the user's guess 
@@ -108,22 +110,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 currentScore++;
                 if (currentScore > highScore) {
                     highScore = currentScore;
-                };
+                }
                 if (deck.length === 0) {
 
                     alert("WOW! You beat the game! :D");
                     newGame();
-                };
+                }
             } else {
                 // Incorrect guess
                 currentScore = 0;
                 newGame();
-            };
+            }
             displayCard();
             drawnCardsElement.innerText = "";
             displayDrawPile();
             updateScores();
-        };
+        }
 
         /**
          * Returns all but first index of drawPile array back into deck array
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let returnCards = drawPile.splice(1, drawPile.length);
             deck.push(...returnCards);
             drawPile.length = 1;
-        };
+        }
 
         /**
          * Udates current score and high score
@@ -150,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 highScoreElement.textContent = highScore;
             }
-        };
+        }
     });
 });
 
