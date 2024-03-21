@@ -61,11 +61,11 @@ a {
     color: #f70132;
 }
 
-#black-suit {
+.black-suit {
     color: black;
 }
 
-#red-suit {
+.red-suit {
     color: red;
 }
 
