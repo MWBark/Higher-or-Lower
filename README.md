@@ -45,6 +45,17 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
 ### Bugs
 
 ### Validator Testing
+  - HTML
+    
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmwbark.github.io%2FHigher-or-Lower%2F)
+
+  - CSS
+
+    - No errors were returned when passing through the official [(jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmwbark.github.io%2FHigher-or-Lower%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+  - Accessibility
+
+    - I confirmed the colors and fonts chosen are accessible by running it through lighthouse in devtools
 
 ### Unfixed Bugs
 
