@@ -4,6 +4,8 @@ Higher or lower is a game website that lets users play the classic card game of 
 
 The site can be used by anyone of any age, though the cartoonish style of picture cards and simple nature of the game would make it well suited for younger children.
 
+![Website shown on multiple devices](assets/images/readme/responsive.jpg)
+
 ## Features
 
 - ### Header
@@ -11,10 +13,14 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
 
   - Its color theme is consistent with the colors of the picture cards. 
 
+![Header](assets/images/readme/header.jpg)
+
 - ### How to Play
   - This area of text tells new users unfamiliar with the game, in a clear way, the simple rules of the game.
 
   - This area also contains a play button, targeted with javascript, to change the ‘How to Play’ area into the main game with a click from the user.
+
+![How to play area](assets/images/readme/how-to-play.jpg)
 
 - ### Game Area
   - The left side of this area shows the currently drawn card to the user. The card pictures have been chosen for their attractive design.
@@ -24,6 +30,8 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
   - A score area keeps track of the user’s current score and a user high score, saved by the browser, adds an incentive for the user to keep playing and to come back to the website.
 
   - On the right side is a container, styled like a playing card, that shows the user what cards have been drawn. This helps the user in making their next guess.
+
+![Game area](assets/images/readme/game-area.jpg)
 
 - ### Game Play
   - When the game area loads, a random card is drawn from a created card deck using javascript.
@@ -35,12 +43,16 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
 
   - The footer, like the header, is consistent in color theme with the picture cards.
 
+![Footer](assets/images/readme/footer.jpg)
+
 ## Testing
 - I tested the page works in different browsers: Chrome, Firefox, Edge.
 
 - I confirmed the game results are always correct.
 
 - I have confirmed the text across the site is readable and understandable.
+
+- I have confirmed the website works and looks good across the standard screen sizes using developer tools.
 
 ### Bugs
 
@@ -56,6 +68,8 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
   - Accessibility
 
     - I confirmed the colors and fonts chosen are accessible by running it through lighthouse in devtools
+
+![Lighthouse results](assets/images/readme/lighthouse.jpg)
 
 ### Unfixed Bugs
 
