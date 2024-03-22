@@ -4,8 +4,8 @@
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
 
-    playBtn = document.getElementById('play-game');
-    gameArea = document.getElementById('game-area');
+    let playBtn = document.getElementById('play-game');
+    let gameArea = document.getElementById('game-area');
 
     playBtn.addEventListener('click', function() {
         
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let currentScore = 0;
         let highScore = "";
 
-        if (localStorage.getItem("highScore") === "null") {
+        if (localStorage.getItem("highScore") === null) {
 
             highScore = 0;
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
          */
         function displayDrawPile() {
 
-            for (i = 0; i < drawPile.length; i++) {
+            for (let i = 0; i < drawPile.length; i++) {
                 drawnCardsElement.innerText += drawPile[i].initials;
             }
         }
