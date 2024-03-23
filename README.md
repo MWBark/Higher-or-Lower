@@ -56,6 +56,11 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
 
 ### Bugs
 
+#### Solved Bugs
+  - The highscore text was showing as "null" for first time user, not "0" as intended.
+
+  - Null had been written as a string in the code.
+
 ### Validator Testing
   - HTML
     
@@ -65,13 +70,19 @@ The site can be used by anyone of any age, though the cartoonish style of pictur
 
     - No errors were returned when passing through the official [(jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmwbark.github.io%2FHigher-or-Lower%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
+  - Javascript
+  
+    - No errors were returned when passing through [JSHint](https://jshint.com/)
+
   - Accessibility
 
     - I confirmed the colors and fonts chosen are accessible by running it through lighthouse in devtools
 
 ![Lighthouse results](assets/images/readme/lighthouse.jpg)
 
-### Unfixed Bugs
+  ### Unfixed Bugs
+
+  no unfixed bugs.
 
 ## Deployment
 
@@ -91,12 +102,14 @@ The live link can be found here - [Higher or Lower](https://mwbark.github.io/Hig
 
 ## Credits
 
-### content
+### code
 - The script to create the deck array was adapted from Microsoft co-pilot 'Create an array in javascript containing playing cards' suggestion.
 
 - The html and script for the 'Higher' and 'Lower' buttons was adapted from Microsoft co-pilot 'Create input buttons for a game of higher or lower' suggestion.
 
 - How to create webstorage was taken from [w3Schools](https://www.w3schools.com/html/html5_webstorage.asp).
+
+- How to make a modal was taken from [w3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 - Fixing JSHint warning was taken from [stackoverflow](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const).
 
