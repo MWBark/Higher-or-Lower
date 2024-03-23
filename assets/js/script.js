@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
     playBtn.addEventListener('click', function() {
         
         gameArea.innerHTML =`
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close"></span>
+                <p id="end-game"></p>
+            </div>
+
+        </div>
+
         <div id="cardValue"></div>
 
         <div id="user-area">
@@ -65,15 +75,9 @@ document.addEventListener("DOMContentLoaded", function() {
          */
         function draw() {
 
-            if (deck.length === 0) {
-
-                alert("No more cards in deck! Starting a new game.");
-            } else {
-
-                let randomCard = Math.floor(Math.random() * deck.length);
-                let drawnCard = deck.splice(randomCard, 1)[0];
-                drawPile.unshift(drawnCard);
-            }
+            let randomCard = Math.floor(Math.random() * deck.length);
+            let drawnCard = deck.splice(randomCard, 1)[0];
+            drawPile.unshift(drawnCard);
         }
 
         /**
@@ -113,7 +117,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 if (deck.length === 0) {
 
-                    alert("WOW! You beat the game! :D");
+                    // Get the modal
+                    let modal = document.getElementById("myModal");
+                    let span = document.getElementsByClassName("close")[0];
+                    let endGameText = document.getElementById("end-game");
+                    
+                    modal.style.display = "block";
+                    span.innerHTML = "&times;";
+                    endGameText.innerHTML = "WOW! You beat the game :D Keep it going!";
+                    
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    };
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    };
+
                     newGame();
                 }
             } else {
