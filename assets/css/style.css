@@ -3,6 +3,7 @@
 * {
   font-family: "Germania One", system-ui;
   font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -112,8 +113,8 @@ a {
 @media screen and (min-width: 768px) {
     
     img {
-        height: 360px;
-        width: 240px;
+        height: 330px;
+        width: 220px;
     }
     
     #game-area {
